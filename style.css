@@ -1,0 +1,91 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #0d0d1a; /* Bleu nuit pour rappeler l'hiver */
+    color: #fff; /* Texte en blanc */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Titre principal */
+  h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #ff0000; /* Rouge vif de Noël */
+    text-shadow: 0px 0px 10px #ff0000, 0px 0px 20px #00ff00; /* Effet néon rouge et vert */
+  }
+  
+  /* Conteneur du calendrier */
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background: linear-gradient(145deg, #1f1f30, #2a2a42); /* Effet métallique sombre */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Style des jours */
+  .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #ff0000, #00ff00); /* Dégradé rouge/vert */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Effet au survol des jours */
+  .day:hover:not(.locked) {
+    transform: scale(1.1); /* Zoom */
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #00ff00; /* Éclat néon */
+  }
+  
+  /* Jours verrouillés */
+  .day.locked {
+    background: #555; /* Gris sombre */
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Jours débloqués */
+  .day:not(.locked) {
+    animation: pulse 2s infinite; /* Animation pulsante */
+  }
+  
+  /* Animation pulsante pour les jours débloqués */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00;
+    }
+    50% {
+      box-shadow: 0 0 20px #ff0000, 0 0 40px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00;
+    }
+  }
+  
+  /* Responsivité (petits écrans) */
+  @media (max-width: 600px) {
+    .calendar {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .day {
+      font-size: 1.2rem;
+      height: 80px;
+    }
+  }
+  
