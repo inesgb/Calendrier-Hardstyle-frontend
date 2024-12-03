@@ -13,13 +13,35 @@ body {
 /* Titre principal */
 h1 {
     font-size: 2.5rem;
-    margin: 20px 0;
+    margin: 20px 20px 10px;
     color: #ff4444; /* Rouge vif de Noël */
-    text-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88; /* Effet néon rouge et vert */
+    text-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
     animation: glow 2s infinite alternate;
 }
 
-/* Animation pour le titre */
+/* Décorations autour du titre */
+.decorations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.decorations span {
+    font-size: 2rem;
+    margin: 0 10px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 @keyframes glow {
     0% {
         text-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
@@ -73,7 +95,6 @@ h1 {
     animation: snowing 5s infinite ease-in-out; /* Animation neige */
 }
 
-/* Animation de "neige" pour les jours verrouillés */
 @keyframes snowing {
     0% {
         background: #555;
@@ -91,7 +112,6 @@ h1 {
     animation: pulse 2s infinite; /* Animation pulsante */
 }
 
-/* Animation pulsante pour les jours débloqués */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
@@ -104,7 +124,7 @@ h1 {
     }
 }
 
-/* Ajout de responsivité (petits écrans) */
+/* Responsivité (petits écrans) */
 @media (max-width: 600px) {
     .calendar {
         grid-template-columns: repeat(4, 1fr);
