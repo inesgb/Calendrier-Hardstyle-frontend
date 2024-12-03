@@ -2,57 +2,22 @@
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #0b132b; /* Bleu nuit hivernal */
+    background-color: #0d0d1a; /* Bleu nuit pour rappeler l'hiver */
     color: #fff; /* Texte en blanc */
     margin: 0;
     padding: 0;
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); /* Texture étoilée */
-    background-size: cover;
-}
-
-/* Titre principal */
-h1 {
+  }
+  
+  /* Titre principal */
+  h1 {
     font-size: 2.5rem;
-    margin: 20px 20px 10px;
-    color: #ff4444; /* Rouge vif de Noël */
-    text-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
-    animation: glow 2s infinite alternate;
-}
-
-/* Décorations autour du titre */
-.decorations {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.decorations span {
-    font-size: 2rem;
-    margin: 0 10px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
-    }
-    100% {
-        text-shadow: 0 0 20px #ff2222, 0 0 40px #00ffcc;
-    }
-}
-
-/* Conteneur du calendrier */
-.calendar {
+    margin: 20px 0;
+    color: #ff0000; /* Rouge vif de Noël */
+    text-shadow: 0px 0px 10px #ff0000, 0px 0px 20px #00ff00; /* Effet néon rouge et vert */
+  }
+  
+  /* Conteneur du calendrier */
+  .calendar {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 15px;
@@ -60,17 +25,17 @@ h1 {
     width: 90%;
     max-width: 800px;
     padding: 20px;
-    background: linear-gradient(145deg, #1f1f30, #2a2a42); /* Métallique sombre */
+    background: linear-gradient(145deg, #1f1f30, #2a2a42); /* Effet métallique sombre */
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Style des jours */
-.day {
+  }
+  
+  /* Style des jours */
+  .day {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(145deg, #ff4444, #00ff88); /* Dégradé rouge/vert */
+    background: linear-gradient(145deg, #ff0000, #00ff00); /* Dégradé rouge/vert */
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
@@ -79,59 +44,48 @@ h1 {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-/* Effet au survol des jours */
-.day:hover:not(.locked) {
+  }
+  
+  /* Effet au survol des jours */
+  .day:hover:not(.locked) {
     transform: scale(1.1); /* Zoom */
-    box-shadow: 0 0 15px #ff4444, 0 0 25px #00ff88; /* Éclat néon */
-}
-
-/* Jours verrouillés */
-.day.locked {
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #00ff00; /* Éclat néon */
+  }
+  
+  /* Jours verrouillés */
+  .day.locked {
     background: #555; /* Gris sombre */
     cursor: not-allowed;
-    opacity: 0.8;
-    animation: snowing 5s infinite ease-in-out; /* Animation neige */
-}
-
-@keyframes snowing {
-    0% {
-        background: #555;
-    }
-    50% {
-        background: #777;
-    }
-    100% {
-        background: #555;
-    }
-}
-
-/* Jours débloqués */
-.day.unlocked {
+    opacity: 0.7;
+  }
+  
+  /* Jours débloqués */
+  .day:not(.locked) {
     animation: pulse 2s infinite; /* Animation pulsante */
-}
-
-@keyframes pulse {
+  }
+  
+  /* Animation pulsante pour les jours débloqués */
+  @keyframes pulse {
     0% {
-        box-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
+      box-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00;
     }
     50% {
-        box-shadow: 0 0 20px #ff4444, 0 0 40px #00ff88;
+      box-shadow: 0 0 20px #ff0000, 0 0 40px #00ff00;
     }
     100% {
-        box-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
+      box-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00;
     }
-}
-
-/* Responsivité (petits écrans) */
-@media (max-width: 600px) {
+  }
+  
+  /* Responsivité (petits écrans) */
+  @media (max-width: 600px) {
     .calendar {
-        grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
-
+  
     .day {
-        font-size: 1.2rem;
-        height: 80px;
+      font-size: 1.2rem;
+      height: 80px;
     }
-}
+  }
+  
