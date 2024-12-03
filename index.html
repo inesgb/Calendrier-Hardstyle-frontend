@@ -5,9 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendrier de l'Avent</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajout de styles pour les décorations */
+    .decorations {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .decorations span {
+      font-size: 2rem;
+      margin: 0 10px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .decorations span:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .decorations span:nth-child(even) {
+      animation-delay: 0.4s;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: 2.5rem;
+      color: #ff4444;
+      text-shadow: 0 0 10px #ff4444, 0 0 20px #00ff88;
+    }
+  </style>
 </head>
 <body>
+  <div class="decorations">
+    <span>🎄</span>
+    <span>🔥</span>
+    <span>🎅</span>
+    <span>🔥</span>
+    <span>🎄</span>
+  </div>
   <h1>Calendrier de l'Avent Hardstyle avec Soldat Poncet</h1>
+  <div class="decorations">
+    <span>🔥</span>
+    <span>🎅</span>
+    <span>🎄</span>
+    <span>🎅</span>
+    <span>🔥</span>
+  </div>
   <div class="calendar" id="calendar"></div>
   <script src="script.js"></script>
 </body>
